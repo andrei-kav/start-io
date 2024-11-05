@@ -1,0 +1,7 @@
+{
+  "name": "startIo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
