@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { PhotoService, UserPhoto } from "../services/photo.service";
 import { ActionSheetController } from '@ionic/angular';
 
@@ -7,7 +7,7 @@ import { ActionSheetController } from '@ionic/angular';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit {
 
   constructor(
     public photoService: PhotoService,
@@ -18,8 +18,8 @@ export class Tab2Page {
     await this.photoService.loadSaved();
   }
 
-  addPhotoToGallery() {
-    this.photoService.addNewToGallery();
+  async addPhotoToGallery() {
+    await this.photoService.addNewToGallery();
   }
 
   async showActionSheet(photo: UserPhoto, position: number) {
